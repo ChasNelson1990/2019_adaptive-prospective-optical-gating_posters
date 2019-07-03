@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Hybrid Optical Gating Allows 4D Imaging and Quantification in the Developing Zebrafish Heart</title>
+
+		<meta name="description" content="Hybrid Optical Gating Allows 4D Imaging and Quantification in the Developing Zebrafish Heart">
+		<meta name="author" content="Carl J Nelson, Vytautas Zickus, Charlotte Buckley, Finn Bruton, Aryan Baghbadrani, John J Mullins, Martin A Denvir and Jonathan Taylor">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+    <!-- for gallery -->
+    <style>
+      .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: baseline;
+      }
+
+      .row > div {
+          max-width: 40%;
+      }
+
+      .row img {
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 90%;
+          max-width: 300px;
+      }
+    </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section id="home">
+          <h1>Pick a Video</h1>
+          <div class="row">
+            <div>
+              <a href="#prospective">
+                <img src="videos/prospective.png">
+                <small>A. Prospective Optical Gating</small>
+              </a>
+            </div>
+            <div>
+              <a href="#volume">
+                <img src="videos/3d.png">
+                <small>B. Building a 3D Stack</small>
+              </a>
+            </div>
+            <div>
+              <a href="#brightfield">
+                <img src="images/manualStart.jpg">
+                <small>C. Developmental Changes</small>
+              </a>
+            </div>
+            <div>
+              <a href="#ltu">
+                <img src="images/ltu.png">
+                <small>D. Hybrid Optical Gating</small>
+              </a>
+            </div>
+            <div>
+              <a href="#looping">
+                <img src="images/heartlooping.png">
+                <small>E. Heart Looping</small>
+              </a>
+            </div>
+            <div>
+              <a href="#injury">
+                <img src="images/injury.png">
+                <small>F. Macrophage Response</small>
+              </a>
+            </div>
+          </div>
+				</section>
+
+        <section id="prospective">
+          <h2>Real-time, Prospective Optical Gating</h2>
+
+          <video width=100% loop>
+            <source data-src="./videos/prospective.mp4" type="video/mp4">
+          </video>
+
+          <ul>
+            <li>Uses a continuous IR brightfield (left)</li>
+            <li>Uses image similarity metrics to recover <em>phase</em> (center)</li>
+            <li>Forward predicts a <em>trigger</em> time (red/blue circle)</li>
+            <li>Captures fluorescence images only at target phase (right)</li>
+          </ul>
+
+          <a href=#home><h2>...back</h2></a>
+				</section>
+
+        <section id="volume">
+          <h2>Building a 3D Stack</h2>
+
+          <video height=300 loop>
+            <source data-src="./videos/make3d.mp4" type="video/mp4">
+          </video>
+          <video height=300 loop>
+            <source data-src="./videos/3d.mp4" type="video/mp4">
+          </video>
+
+          <ul>
+            <li>We determine <em>one trigger per heartbeat</em> (left)</li>
+            <li>And capture a fluorescence image, moving the sample between captures (center)</li>
+            <li>To build a <em>3D volume</em> (right)</li>
+          </ul>
+
+          <a href=#home><h2>...back</h2></a>
+				</section>
+
+        <section id="brightfield">
+          <h2>Real-time, Prospective Optical Gating</h2>
+
+          <img src="./images/manual3.gif" width=100%/>
+
+          <ul>
+            <li>Even over 40 minutes the heart begins to <em>change shape and size</em></li>
+            <li>After 18 hours it is almost unrecognisable</li>
+            <li>Prospective optical gating begins to fail around 40-60 minutes due to the reliance on earlier reference images</li>
+          </ul>
+
+          <a href=#home><h2>...back</h2></a>
+				</section>
+
+        <section id="ltu">
+          <h2>Hybrid Optical Gating</h2>
+
+          <img src="./images/ltu.gif" width=100%/>
+
+          <ul>
+            <li>Each stack we determine a new reference heartbeat but don't know where our chosen target phase is (left - blue)</li>
+            <li>We can use <em>retrospective optical gating</em> to align new reference heartbeats to old reference heartbeats and identify the correct target phase (left - red)</li>
+            <li>We can then take <em>prospective optical gating</em> stacks whilst maintaining <em>phase-lock</em> over hours (right)</li>
+          </ul>
+
+          <a href=#home><h2>...back</h2></a>
+        </section>
+
+        <section id="looping">
+          <h2>Developmental Imaging - Heart Looping</h2>
+
+          <img src="./images/heartlooping.gif" width=100%/>
+
+          <ul>
+            <li>This video shows 18 hours of phase-locked time lapse imaging of the developing zebrafish heart during the looping phase</li>
+            <li>This fish expresses mCherry in endothilial tissues and cells</li>
+          </ul>
+
+          <a href=#home><h2>...back</h2></a>
+				</section>
+
+        <section id="injury">
+          <h2>Injury Imaging - Macrophage Response</h2>
+
+          <img src="./images/injury.gif" width=80%/>
+
+          <ul>
+            <li>This video shows 24 hours of phase-locked time lapse imaging of macrophage response after injury in the zebrafish heart</li>
+            <li>Injury has been induced by local laser ablation (white arrow)</li>
+            <li>This fish expresses GFP in heart muscle and mCherry in macrophages</li>
+          </ul>
+
+          <a href=#home><h2>...back</h2></a>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        autoPlayMedia: true,
+        height: 1400,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+      })
+		</script>
+
+	</body>
+</html>
